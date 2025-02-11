@@ -29,16 +29,24 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-// tomcat embedded
-	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-// JSTL 
-	implementation 'jakarta.servlet:jakarta.servlet-api'
-	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
-	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
 	
-	// 재실행 없이 바로 프론트 반영
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// tomcat-embed
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	
+	// JSTL
+    implementation 'jakarta.servlet:jakarta.servlet-api'
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
+    
+    // 재실행 없이 바로 프론트 반영
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    
+    // Excel
+    implementation 'org.apache.poi:poi:5.4.0'
+    implementation 'org.apache.poi:poi-ooxml:5.4.0'
+    
+    // PDF
+    implementation 'com.lowagie:itext:2.1.7' 
 }
 
 tasks.named('test') {

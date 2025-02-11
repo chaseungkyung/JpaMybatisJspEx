@@ -23,7 +23,6 @@ public class DemoController {
 	
 	@GetMapping("write")
 	public String handleForm() {
-		
 		return "demo/write";
 	}
 	
@@ -36,7 +35,7 @@ public class DemoController {
 		try {
 			service.insertDemo(dto);
 			
-			rAttr.addFlashAttribute("message", "데이터 등록 성공 !!!");			
+			rAttr.addFlashAttribute("message", "데이터 등록 성공...");
 		} catch (Exception e) {
 			rAttr.addFlashAttribute("message", "데이터 등록 실패 !!!");
 		}
@@ -46,8 +45,10 @@ public class DemoController {
 	
 	@GetMapping("complete")
 	public String handleComplete(
-			@ModelAttribute("message") String message ) {		// 이건 ModelAttribute 안해도 된다고 함
+			@ModelAttribute("message") String message) {
 		
 		return "demo/result";
 	}
+	
+	
 }

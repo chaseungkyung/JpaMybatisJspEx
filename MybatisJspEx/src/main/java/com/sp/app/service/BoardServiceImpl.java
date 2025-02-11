@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.sp.app.model.Board;
 import com.sp.app.mapper.BoardMapper;
+import com.sp.app.model.Board;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

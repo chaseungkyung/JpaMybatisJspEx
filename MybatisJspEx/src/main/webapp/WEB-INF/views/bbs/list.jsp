@@ -17,14 +17,14 @@
 </style>
 
 <script type="text/javascript">
-//검색 키워드 입력란에서 엔터를 누른 경우 서버 전송 막기  (서버가 불필요한 데이터를 계속 받을 수도 있어서)
+//검색 키워드 입력란에서 엔터를 누른 경우 서버 전송 막기 
 window.addEventListener('load', () => {
 	const inputEL = document.querySelector('form input[name=kwd]'); 
 	inputEL.addEventListener('keydown', function (evt) {
-	    if(evt.key === 'Enter') {					// 만약 엔터를 치면
-	    	evt.preventDefault();					// 서버 못가게 막고
+	    if(evt.key === 'Enter') {
+	    	evt.preventDefault();
 	    	
-	    	searchList();							// searchList() 는 실행되게
+	    	searchList();
 	    }
 	});
 });
@@ -32,13 +32,13 @@ window.addEventListener('load', () => {
 function searchList() {
 	const f = document.searchForm;
 	if(! f.kwd.value.trim()) {
-		return;										// 입력된 데이터 없으면 안 감
+		return;
 	}
 	
 	// form 요소는 FormData를 이용하여 URLSearchParams 으로 변환
 	const formData = new FormData(f);
 	let requestParams = new URLSearchParams(formData).toString();
-											// 여기 f 는 못 넣어서.! formData는 가능하니까.
+	
 	/*
 	let params = {
 		schType:f.schType.value, kwd:f.kwd.value
